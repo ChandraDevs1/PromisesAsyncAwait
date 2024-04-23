@@ -11,21 +11,24 @@ function Numbers(a, b) {
   });
 }
 
-async function main() {
-  try {
-    const res = await Numbers(10, 2);
-    console.log(res);
-    const res1 = await Numbers(100, 2);
-    console.log(res1);
-    const res2 = await Numbers(34, 45);
-    console.log(res2);
-    const res3 = await Numbers(10, 2);
-    console.log(res3);
-    const res4 = await Numbers(10, 0);
-    console.log(res4);
-  } catch (error) {
-    console.error(error);
-  }
+function main() {
+  Numbers(10, 2)
+    .then((res) => console.log(res))
+    .then(() => Numbers(22, 8))
+    .then((res1) => console.log(res1))
+    .then(() => Numbers(10, 0))
+    .then((res2) => console.log(res2))
+    .catch((err) => console.log(err))
+    .then(() => Numbers(56, 27))
+    .then((res3) => console.log(res3))
+    .then(() => Numbers(862, 265))
+    .then((res4) => console.log(res4))
+    .then(() => Numbers(60, -32))
+    .then((res5) => console.log(res5))
+    .then(() => Numbers(78, 0))
+    .then((res6) => console.log(res6))
+    .catch((err) => console.log(err));
 }
 
 main();
+
